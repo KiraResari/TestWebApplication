@@ -1,0 +1,15 @@
+﻿@page
+@using TestWebApplication.Backend
+@model TestWebApplication.Pages.DeviceDetailsModel
+@{
+    int DeviceId = int.Parse(Request.QueryString.ToString().Remove(0, 1));
+    Device Device = TestDevices.list[DeviceId];
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Device Details</h1>
+    <b>Name: </b> @Device.Name<br />
+    <b>Description: </b> @Device.Description<br />
+    <a asp-page="/Index">Back</a>
+</div>

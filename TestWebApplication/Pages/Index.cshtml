@@ -17,7 +17,7 @@
        <tbody>
            @foreach(Device device in TestDevices.list){
             <tr>
-                <td>@device.Name</td>
+                <td><a href="@Href("~/DeviceDetails?" + device.Id)">@device.Name</a></td>
                 <td>@device.Description</td>
             </tr>
            }
