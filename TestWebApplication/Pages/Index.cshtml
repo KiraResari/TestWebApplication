@@ -1,4 +1,5 @@
 ﻿@page
+@using TestWebApplication.Backend
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -6,4 +7,20 @@
 
 <div class="text-center">
     <h1 class="display-4">Bye World!</h1>
+    <table>
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Description</th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach(Device device in TestDevices.list){
+            <tr>
+                <td>@device.Name</td>
+                <td>@device.Description</td>
+            </tr>
+           }
+       </tbody>
+   </table>
 </div>
